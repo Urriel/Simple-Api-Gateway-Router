@@ -1,0 +1,25 @@
+{
+  "name": "simple-api-gateway-router",
+  "version": "0.0.1",
+  "description": "Simple router for AWS Lambdas receiving AWS API-Gateway events.",
+  "main": "src/index.js",
+  "repository": "git@github.com:Urriel/Simple-Api-Gateway-Router.git",
+  "author": "Vincent Dal Maso <vincent@dal-maso.fr>",
+  "license": "Apache2",
+  "private": false,
+  "scripts": {
+    "test": "jest"
+  },
+  "devDependencies": {
+    "eslint-config-airbnb-base": "12.1.0",
+    "eslint-plugin-import": "2.11.0",
+    "eslint": "4.19.1",
+    "jest": "22.4.3"
+  },
+  "dependencies": {
+  },
+  "jest": {
+    "verbose": true,
+    "collectCoverage": true
+  }
+}

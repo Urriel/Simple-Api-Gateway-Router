@@ -1,0 +1,44 @@
+{
+  "headers": {
+    "Host": "localhost:3000",
+    "User-Agent": "insomnia/5.15.0",
+    "Content-Type": "application/json",
+    "x-account-id": "test",
+    "x-account-key": "test",
+    "Accept": "*/*",
+    "Content-Length": 64
+  },
+  "path": "/auth/sign",
+  "pathParameters": null,
+  "requestContext": {
+    "accountId": "offlineContext_accountId",
+    "resourceId": "offlineContext_resourceId",
+    "apiId": "offlineContext_apiId",
+    "stage": "dev",
+    "requestId": "offlineContext_requestId_",
+    "identity": {
+      "cognitoIdentityPoolId": "offlineContext_cognitoIdentityPoolId",
+      "accountId": "offlineContext_accountId",
+      "cognitoIdentityId": "offlineContext_cognitoIdentityId",
+      "caller": "offlineContext_caller",
+      "apiKey": "offlineContext_apiKey",
+      "sourceIp": "127.0.0.1",
+      "cognitoAuthenticationType": "offlineContext_cognitoAuthenticationType",
+      "cognitoAuthenticationProvider": "offlineContext_cognitoAuthenticationProvider",
+      "userArn": "offlineContext_userArn",
+      "userAgent": "insomnia/5.15.0",
+      "user": "offlineContext_user"
+    },
+    "authorizer": {
+      "principalId": "offlineContext_authorizer_principalId"
+    },
+    "resourcePath": "/auth/sign",
+    "httpMethod": "POST"
+  },
+  "resource": "/auth/sign",
+  "httpMethod": "POST",
+  "queryStringParameters": null,
+  "stageVariables": null,
+  "body": "{\n\t\"email\": \"vincent@dal-maso.fr\",\n\t\"name\": \"Vincent Dal Maso\"\n}",
+  "isOffline": true
+}
