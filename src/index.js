@@ -12,6 +12,7 @@ class Request {
 
     this.context = context || {};
     this.stage = stageVariables || {};
+    this.raw = event;
 
     this.headers = headers || {};
     this.body = body || {};
@@ -22,17 +23,10 @@ class Request {
 
   /**
    * Return the event information as received.
-   * @returns {{context: *, headers: *, body: *, query: *, path: *}}
+   * @returns {*}
    */
   getRaw() {
-    return {
-      context: this.context,
-      headers: this.headers,
-      body: this.body,
-      query: this.query,
-      path: this.path,
-      resource: this.resource,
-    };
+    return this.raw;
   }
 
   /**
@@ -134,7 +128,7 @@ class Router {
       result.body = body || '';
       result.isBase64Encoded = true;
     } else {
-      result.body = JSON.stringify(body || '');
+      result.body = JSON.stringify(body || params);
     }
 
     return result;
