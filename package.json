@@ -1,5 +1,5 @@
 {
-  "name": "simple-api-gateway-router",
+  "name": "sagr",
   "version": "0.0.1",
   "description": "Simple router for AWS Lambdas receiving AWS API-Gateway events.",
   "main": "src/index.js",
@@ -11,13 +11,13 @@
     "test": "jest"
   },
   "devDependencies": {
+    "eslint": "4.19.1",
     "eslint-config-airbnb-base": "12.1.0",
     "eslint-plugin-import": "2.11.0",
-    "eslint": "4.19.1",
-    "jest": "22.4.3"
+    "jest": "22.4.3",
+    "semantic-release": "15.1.7"
   },
-  "dependencies": {
-  },
+  "dependencies": {},
   "jest": {
     "verbose": true,
     "collectCoverage": true
