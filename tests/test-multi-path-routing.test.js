@@ -5,7 +5,7 @@ const Router = require('../src');
 
 describe('Simple Routing handling', () => {
   test('Should be able to handle a request', () => {
-    event.resource = '/auth/sign';
+    event.resource = 'test';
 
     const router = new Router({
       event,
@@ -19,7 +19,7 @@ describe('Simple Routing handling', () => {
 
     router.route({
       method: 'POST',
-      path: ['/auth/sign', '/auth/verify'],
+      path: ['test', '/auth/verify'],
       handler: (req, res) => {
         res({
           statusCode: 200,
@@ -48,7 +48,7 @@ describe('Simple Routing handling', () => {
 
     router.route({
       method: ['POST', 'GET'],
-      path: ['/auth/sign', '/auth/verify'],
+      path: ['test', '/auth/verify'],
       handler: (req, res) => {
         res({
           statusCode: 200,
@@ -76,7 +76,7 @@ describe('Simple Routing handling', () => {
 
     router.route({
       method: ['POST', 'GET'],
-      path: ['/auth/sign', '/auth/verify'],
+      path: ['test', '/auth/verify'],
       handler: (req, res) => {
         res({
           statusCode: 200,

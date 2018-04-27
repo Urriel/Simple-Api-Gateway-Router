@@ -7,16 +7,17 @@ class Request {
   constructor(params) {
     const { event, context } = params;
     const {
-      body, queryStringParameters, pathParameters, headers, stageVariables,
+      body, queryStringParameters, pathParameters, headers, stageVariables, resource
     } = event;
 
-    this.context = context;
-    this.stage = stageVariables;
+    this.context = context || {};
+    this.stage = stageVariables || {};
 
     this.headers = headers || {};
     this.body = body || {};
     this.query = queryStringParameters || {};
     this.path = pathParameters || {};
+    this.resource = resource || '/';
   }
 
   /**
@@ -30,6 +31,7 @@ class Request {
       body: this.body,
       query: this.query,
       path: this.path,
+      resource: this.resource,
     };
   }
 
@@ -155,7 +157,7 @@ class Router {
       methodMatched = Router._find(httpMethod, method);
       resourceMatched = Router._find(resource, path);
     } else {
-      throw new Error('The Event provided is not an API-Gateway Event');
+      throw new Error('The Event provided is supported');
     }
 
     return methodMatched && resourceMatched;
@@ -183,12 +185,12 @@ class Router {
     const self = this;
     const { handler } = options;
 
-    if (self.routeMatched || !self._routeMatcher(options)) {
-      return;
+    if (!handler) {
+      throw new Error('Route Handler Missing');
     }
 
-    if (handler === undefined) {
-      throw new Error('Route Handler Missing');
+    if (self.routeMatched || !self._routeMatcher(options)) {
+      return;
     }
 
     self.routeMatched = true;

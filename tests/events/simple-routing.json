@@ -8,7 +8,7 @@
     "Accept": "*/*",
     "Content-Length": 64
   },
-  "path": "/auth/sign",
+  "path": "test",
   "pathParameters": null,
   "requestContext": {
     "accountId": "offlineContext_accountId",
@@ -32,13 +32,13 @@
     "authorizer": {
       "principalId": "offlineContext_authorizer_principalId"
     },
-    "resourcePath": "/auth/sign",
+    "resourcePath": "test",
     "httpMethod": "POST"
   },
-  "resource": "/auth/sign",
+  "resource": "/test",
   "httpMethod": "POST",
   "queryStringParameters": null,
   "stageVariables": null,
-  "body": "{\n\t\"email\": \"vincent@dal-maso.fr\",\n\t\"name\": \"Vincent Dal Maso\"\n}",
+  "body": "{\n\t\"email\": \"test@test.fr\",\n\t\"name\": \"Test Test\"\n}",
   "isOffline": true
 }
